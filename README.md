@@ -2,6 +2,8 @@
 
 Simple TODO application Tech: React, React Hooks (useState, useRef), React CSS Modules
 
+You can preview it here: https://chazz27.github.io/todo-app/
+
 Version 1.0
 
 -   basic styling
