@@ -1,0 +1,29 @@
+.list-item-form {
+	background-color: #fff;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	.list-item-form-input {
+		display: block;
+		padding: 5px;
+		height: 40px;
+		font-size: 16px;
+		&:placeholder-shown {
+			font-size: 21px;
+		}
+	}
+	.form-buttons {
+		display: block;
+		width: 100%;
+		margin: 10px 0 0;
+		.form-button {
+			display: inline-block;
+			width: 100%;
+			height: 40px;
+			background-color: #a3ddff;
+			font-weight: bold;
+			font-size: 21px;
+			border: 0;
+		}
+	}
+}
