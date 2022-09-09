@@ -8,6 +8,7 @@
 		padding: 5px;
 		height: 40px;
 		font-size: 16px;
+		font-family: 'Montserrat', sans-serif;
 		&:placeholder-shown {
 			font-size: 21px;
 		}
@@ -20,10 +21,16 @@
 			display: inline-block;
 			width: 100%;
 			height: 40px;
-			background-color: #a3ddff;
+			background-color: #3c8dbd;
+			transition: background-color .2s ease;
+			color: #fff;
+			font-family: 'Montserrat', sans-serif;
 			font-weight: bold;
 			font-size: 21px;
 			border: 0;
+			&:hover {
+				background-color: #77bde6;
+			}
 		}
 	}
 }

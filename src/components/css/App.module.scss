@@ -1,6 +1,10 @@
 .app {
 	max-width: 767px;
 	width: 100%;
+	padding: 20px;
+	@media (max-width: 767px) {
+	}
+
 	.headline {
 		text-align: center;
 		color: #3c8dbd;

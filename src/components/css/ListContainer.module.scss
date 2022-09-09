@@ -1,6 +1,23 @@
 .list-container {
 	padding: 10px;
 	background-color: #fff;
-	max-height: 400px;
+	max-height: 600px;
 	overflow-y: auto;
+}
+.list-counter {
+	text-align: center;
+	font-size: 20px;
+	animation: jump .5s 1;
+}
+
+@keyframes jump {
+	from {
+		transition: transform .2s ease;
+		transform: scale(1.2);
+	}
+
+	to {
+		transition: transform .2s ease;
+		transform: scale(1);
+	}
 }
