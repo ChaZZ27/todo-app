@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import Card from "./Helpers/Card";
-import ListContainer from "./ListContainer";
-import ListItemForm from "./ListItemForm";
+import ListContainer from "./List/ListContainer";
+import ListItemForm from "./List/ListItemForm";
 
 import classes from "./css/App.module.scss";
 
-const App = (props) => {
+const App = () => {
   const [listArray, setList] = useState([])
 
   const getListItems = (data) => {
@@ -19,12 +19,22 @@ const App = (props) => {
     setList(listRemovedItem);
   }
 
+  const onClickFinishItemHandler = (id) => {
+    const listFinishedItem = listArray.map(item => {
+      if(item.id === id) {
+        item.isFinished = !item.isFinished;
+      }
+      return item
+    })
+    return setList(listFinishedItem)
+  }
+
   return (
     <div className={classes.app}>
       <Card>
-        <h1 className={classes.headline}>TODO list</h1>
-        <ListItemForm data={getListItems} />
-        {listArray.length > 0 ? <ListContainer deleteItemHandler={onClickDeleteHandler} list={listArray} /> : ''} 
+        <h1 className={classes.headline}>&#9745; TODO list</h1>
+        <ListItemForm list={listArray} data={getListItems} />
+        {listArray.length > 0 ? <ListContainer deleteItemHandler={onClickDeleteHandler} finishItemHandler={onClickFinishItemHandler} list={listArray} /> : ''} 
       </Card>
     </div>
   );

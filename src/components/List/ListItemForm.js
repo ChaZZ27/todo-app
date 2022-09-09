@@ -1,16 +1,22 @@
 import React, { useRef } from "react";
-
-import classes from "./css/ListItemForm.module.scss";
+import classes from "../css/ListItemForm.module.scss";
 
 const ListItemForm = (props) => {
     const inputVal = useRef();
 
+
     const onFormSubmitHandler = (e) => {
         e.preventDefault();
-        const itemText = inputVal.current.value,
-             itemID = Date.now();
 
-        props.data({id: itemID, text: itemText})
+        const itemText = inputVal.current.value,
+                itemID = Date.now();
+
+        props.data({
+            id: itemID, 
+            text: itemText,
+            isFinished: false
+        })
+
         inputVal.current.value = '';
         inputVal.current.focus();
     }
