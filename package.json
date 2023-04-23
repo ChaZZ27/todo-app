@@ -1,19 +1,26 @@
 {
   "name": "todo",
-  "version": "0.1.0",
+  "version": "2.1",
   "homepage": "https://chazz27.github.io/todo-app",
   "private": false,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.0"
+    "react-redux": "^8.0.5",
+    "react-scripts": "5.0.0",
+    "redux": "^4.2.1"
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "build": "react-scripts build",
@@ -38,6 +45,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^5.0.0",
+    "sass": "^1.62.0"
   }
 }
