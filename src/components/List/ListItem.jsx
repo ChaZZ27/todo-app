@@ -19,6 +19,7 @@ const ListItem = ({ isFinished, id, text }) => {
         }))
     }
 
+
     return <li className={itemClasses}>
         <p className={classes['list-item-description']}>{text}</p>
         <div className={classes['list-item-action']}>
