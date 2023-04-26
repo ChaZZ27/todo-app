@@ -15,7 +15,7 @@ const App = () => {
         <ListItemForm />
         {todos.length > 0 && <ListContainer />}
       </Card>
-      <div style={{ textAlign: "right" }}>v2.1</div>
+      <div style={{ textAlign: "right" }}>v3.0</div>
     </div>
   );
 }
