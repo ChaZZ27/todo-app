@@ -1,6 +1,12 @@
+
 import cardClasses from "../css/Card.module.scss";
 
-const Card = ({ className, children }) => {
+type CardComponentType = {
+    className?: string,
+    children?: React.ReactNode
+}
+
+const Card = ({ className, children }: CardComponentType) => {
     const classes = className ? `${cardClasses.card} ${className}` : `${cardClasses.card}`
     return <div className={classes}>
         {children}

@@ -1,11 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+type NewTodoType = {
+    id: number;
+    text: string;
+    isFinished: boolean;
+}
+
 const todoSlice = createSlice({
     name: "todos",
-    initialState: [],
+    initialState: [] as NewTodoType[],
     reducers: {
         addTodo: (state, action) => {
-            const newTodo = {
+            const newTodo: NewTodoType = {
                 id: Date.now(),
                 text: action.payload.text,
                 isFinished: false
@@ -17,13 +23,10 @@ const todoSlice = createSlice({
             return removedTodos
         },
         finishTodo: (state, action) => {
-            const finishedTodos = state.map(item => {
-                if (item.id === action.payload.id) {
-                    item.isFinished = !item.isFinished;
-                }
-                return item
-            })
-            return state[finishedTodos]
+            const index = state.findIndex(item => item.id === action.payload.id);
+            if (index !== -1) {
+                state[index].isFinished = !state[index].isFinished;
+            }
         }
     }
 })

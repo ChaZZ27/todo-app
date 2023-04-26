@@ -2,7 +2,13 @@ import { useDispatch } from "react-redux";
 import { removeTodo, finishTodo } from "../../redux/todoSlice";
 import classes from "../css/ListItem.module.scss";
 
-const ListItem = ({ isFinished, id, text }) => {
+type ListItemProps = {
+    id: number,
+    isFinished: boolean,
+    text: string
+}
+
+const ListItem = ({ isFinished, id, text }: ListItemProps) => {
     const dispatch = useDispatch();
     const itemClasses = `${isFinished ? [classes['list-item'], classes['finished']].join(' ') : classes['list-item']}`;
 
