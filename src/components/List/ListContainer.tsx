@@ -14,8 +14,10 @@ const ListContainer = () => {
         element.isFinished && finishedItems.push(element)
     });
 
+    const listCounterText = todos.length - finishedItems.length === 0 ? 'Nice! All your tasks are finished :) ' : `You have ${todos.length - finishedItems.length} task(s) to finish`
+
     return <>
-        <h3 className={classes['list-counter']}>{todos.length - finishedItems.length === 0 ? 'Nice! All your tasks are finished :) ' : `You have ${todos.length - finishedItems.length} task(s) to finish`}</h3>
+        <h3 className={classes['list-counter']}>{listCounterText}</h3>
         <ul className={classes['list-container']}>
             {todos.map((item) => <ListItem key={item.id} id={item.id} text={item.text} isFinished={item.isFinished} />)}
         </ul>
